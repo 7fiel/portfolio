@@ -27,13 +27,14 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
         }
         .profile {
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
             align-items: center;
             margin: 2rem 0;
             opacity: 0;
@@ -45,21 +46,23 @@
             width: 150px;
             height: 150px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
         }
         .profile div {
-            max-width: 600px;
+            max-width: 100%;
+            text-align: center;
         }
         .skills, .projects {
             margin: 2rem 0;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.5s ease-in-out;
-            padding: 0 100px; /* Adiciona padding nas laterais */
+            padding: 0 1rem;
         }
         .skills ul, .projects ul {
             list-style: none;
             padding: 0;
-            overflow: visible; /* Permite que o overflow seja visível */
+            overflow: visible;
         }
         .skills li, .projects li {
             background: #4ca1af;
@@ -76,13 +79,13 @@
         .github-button, .work-button, .recent-work-button {
             display: inline-block;
             margin-top: 1rem;
-            padding: 0.5rem 2.5rem;
+            padding: 0.5rem 1.5rem;
             background-color: #34495e;
             color: #fff;
             border-radius: 25px;
             text-decoration: none;
             transition: background-color 0.3s ease-in-out;
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-align: center;
         }
         .github-button:hover, .work-button:hover, .recent-work-button:hover {
@@ -91,6 +94,27 @@
         .button-container {
             text-align: center;
             margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .profile img {
+                margin-bottom: 0;
+                margin-right: 2rem;
+            }
+            .profile div {
+                text-align: left;
+            }
+            .skills, .projects {
+                padding: 0 3rem;
+            }
+            .github-button, .work-button, .recent-work-button {
+                font-size: 1.2rem;
+                padding: 0.5rem 2.5rem;
+            }
         }
     </style>
 </head>
