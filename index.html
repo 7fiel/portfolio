@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Enrico</title>
+    <title>Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+        @font-face {
+            font-family: 'San Francisco';
+            src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff');
+        }
         
         :root {
             --primary-color: #1a1a1a;
@@ -57,7 +61,7 @@
         }
         
         h1, h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'San Francisco', sans-serif;
         }
         
         h1 {
@@ -91,15 +95,29 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
         }
         
-        .profile img {
-            border-radius: 50%;
-            width: 180px;
-            height: 180px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            margin-bottom: 1.5rem;
-            border: 5px solid var(--accent-color);
+        .profile::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            border-top: 3px solid var(--accent-color);
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .profile::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 3px solid var(--accent-color);
+            border-right: 3px solid var(--accent-color);
         }
         
         .skills ul, .projects ul {
@@ -139,6 +157,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: bold;
+            font-family: 'San Francisco', sans-serif;
         }
         
         .github-button:hover, .work-button:hover, .recent-work-button:hover {
@@ -152,18 +171,28 @@
             margin-top: 2.5rem;
         }
         
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 2rem auto;
+        }
+        
+        .icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
         @media (min-width: 768px) {
             .profile {
                 flex-direction: row;
                 justify-content: center;
                 text-align: left;
             }
-            .profile img {
-                margin-right: 2rem;
-                margin-bottom: 0;
-            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -171,15 +200,18 @@
     </header>
     <div class="container">
         <section class="profile">
-            <img src="./pic1.jpg" alt="Foto de perfil">
             <div>
+                <i class="fas fa-user-circle icon"></i>
                 <h2>Sobre Mim</h2>
+                <div class="divider"></div>
                 <p>Experiência com modelagem 3D, banco de dados, Design Digital, Programação Web e linguagens de programação: HTML, CSS, C++, JavaScript e SQL.</p>
-                <a href="https://github.com/netheriosa" class="github-button" target="_blank">GitHub</a>
+                <a href="https://github.com/7fiel" class="github-button" target="_blank">GitHub</a>
             </div>
         </section>
         <section class="skills">
+            <i class="fas fa-cogs icon"></i>
             <h2>Habilidades</h2>
+            <div class="divider"></div>
             <ul>
                 <li>Modelagem 3D</li>
                 <li>Banco de Dados</li>
@@ -193,7 +225,9 @@
             </ul>
         </section>
         <section class="projects">
+            <i class="fas fa-project-diagram icon"></i>
             <h2>Projetos</h2>
+            <div class="divider"></div>
             <ul>
                 <li>Lojas de moedas virtuais</li>
                 <li>Modelos 3D para empresas</li>
@@ -202,7 +236,7 @@
             </ul>
             <div class="button-container">
                 <a href="https://imgur.com/user/fielbr1/posts" class="work-button" target="_blank">Veja meus trabalhos</a>
-                <a href="https://netheriosa.github.io/intro-usina/" class="recent-work-button" target="_blank">Veja meu trabalho mais recente</a>
+                <a href="https://7fiel.github.io/intro-usina/" class="recent-work-button" target="_blank">Veja meu trabalho mais recente</a>
             </div>
         </section>
     </div>
